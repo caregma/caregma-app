@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "preinstall": "node -e \"const p=require('./package.json'); console.log('Caregma install check: next='+p.dependencies.next+' eslint-config-next='+p.devDependencies['eslint-config-next'])\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
