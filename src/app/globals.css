@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+  body {
+    font-feature-settings: "ss01", "cv11";
+  }
+  /* Form inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  select {
+    @apply w-full px-4 py-3 bg-white border border-line rounded-lg text-sm
+           transition-colors focus:outline-none focus:border-ink;
+  }
+  textarea {
+    @apply min-h-[88px] leading-relaxed resize-y;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full
+           text-sm font-medium transition-all whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply bg-ink text-bg hover:bg-teal-deep hover:-translate-y-px;
+  }
+  .btn-teal {
+    @apply bg-teal text-white hover:bg-teal-deep hover:-translate-y-px;
+  }
+  .btn-secondary {
+    @apply bg-transparent text-ink border border-ink hover:bg-ink hover:text-bg;
+  }
+  .btn-ghost {
+    @apply bg-bg-alt text-ink hover:bg-bg-deep;
+  }
+  .btn-sm {
+    @apply px-3.5 py-1.5 text-[13px];
+  }
+  .btn-lg {
+    @apply px-7 py-3.5 text-[15px];
+  }
+
+  .panel {
+    @apply bg-white border border-line-soft rounded-2xl overflow-hidden mb-6;
+  }
+  .panel-header {
+    @apply px-7 py-5 border-b border-line-soft flex items-center justify-between;
+  }
+  .panel-title {
+    @apply font-serif text-xl font-medium;
+  }
+
+  .card {
+    @apply bg-white border border-line-soft rounded-2xl p-7;
+  }
+
+  .field-label {
+    @apply block text-[13px] font-medium text-ink mb-2;
+  }
+  .field-hint {
+    @apply text-xs text-ink-faint mt-1.5;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px]
+           font-medium bg-bg-alt text-ink-soft tracking-wide;
+  }
+  .tag-teal {
+    @apply bg-teal-soft text-teal-deep;
+  }
+  .tag-coral {
+    @apply bg-coral-soft text-coral;
+  }
+  .tag-warn {
+    @apply bg-warn-soft text-warn;
+  }
+
+  /* Editorial eyebrow label */
+  .eyebrow {
+    @apply font-mono text-[11px] tracking-[1.5px] uppercase text-ink-soft;
+  }
+}
